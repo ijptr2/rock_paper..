@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <title>Rock Paper Scissors Game</title>
+    <style>
+      /* Reset some default styling */
+      body,
+      h1,
+      h2,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Basic styling */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: rgb(220, 237, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      header {
+        color: rgb(148, 176, 218);
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      main {
+        background-color: rgb(255, 255, 255);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%; /* Adjust the width as needed */
+        max-width: 800px; /* Adjust the max-width as needed */
+        margin-top: 2rem;
+      }
+
+      .score {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1rem 0;
+        animation: slideInDown 1s ease-out;
+      }
+
+      .player-score,
+      .computer-score {
+        text-align: center;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: rgb(143, 145, 162);
+        color: white;
+        animation: fadeIn 1s ease-out;
+      }
+
+      .game {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 2rem 0;
+      }
+
+      .choice {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .choice:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(156, 76, 23, 0.74);
+      }
+
+      .symbol {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      footer {
+        color: rgb(143, 145, 162);
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+        animation: slideInUp 1s ease-out;
+      }
+
+      /* Animations */
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInUp {
+        from {
+          transform: translateY(100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+      <div id="result"></div>
+    </header>
+    <main>
+      <div class="score">
+        <div class="player-score" id="playerScore">
+          <h2>Your Score</h2>
+          <p>0</p>
+        </div>
+        <div class="computer-score" id="compScore">
+          <h2>Computer's Score</h2>
+          <p>0</p>
+        </div>
+      </div>
+      <div class="game">
+        <div class="choice rock" onclick="vcomp('rock')">
+          <div class="symbol">Rock</div>
+        </div>
+        <div class="choice paper" onclick="vcomp('paper')">
+          <div class="symbol">Paper</div>
+        </div>
+        <div class="choice scissors" onclick="vcomp('scissors')">
+          <div class="symbol">Scissors</div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; made by Jules 2023</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
